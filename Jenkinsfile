@@ -39,7 +39,7 @@ pipeline {
     }
     stage("Running on CentOS") {
       agent {
-        label 'centOS'
+        label 'CentOS'
       }
       steps {
         sh "wget http://18.132.210.81/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar"
@@ -57,7 +57,7 @@ pipeline {
     }*/
     stage('Promote to Green') {
       agent {
-        label 'master'
+        label 'apache'
       }
       when {
         branch 'master'
